@@ -1,0 +1,23 @@
+{
+  "name": "setup-token-savings",
+  "description": "Interactive setup wizard for Claude Code token optimization. Installs and configures RTK, Scrapling, Context7, LSP tools, auto-compact, and code-review-graph — up to 86% token reduction.",
+  "version": "1.0.0",
+  "author": {
+    "name": "msadura"
+  },
+  "homepage": "https://github.com/msadura/claude-plugins-marketplace",
+  "repository": "https://github.com/msadura/claude-plugins-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "token-savings",
+    "optimization",
+    "rtk",
+    "scrapling",
+    "context7",
+    "lsp",
+    "auto-compact",
+    "budget",
+    "cost-reduction",
+    "setup-wizard"
+  ]
+}
