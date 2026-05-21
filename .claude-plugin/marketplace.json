@@ -1,0 +1,15 @@
+{
+  "name": "msadura-claude-marketplace",
+  "description": "Claude Code plugins by msadura — token optimization, developer tools",
+  "owner": { "name": "msadura" },
+  "metadata": { "version": "1.0.0", "pluginRoot": "./plugins" },
+  "plugins": [
+    {
+      "name": "setup-token-savings",
+      "description": "Interactive setup wizard for Claude Code token optimization — installs RTK, Scrapling, Context7, LSP, auto-compact for up to 86% savings",
+      "source": "./plugins/setup-token-savings",
+      "category": "developer-tools",
+      "keywords": ["token-savings", "optimization", "rtk", "scrapling", "context7", "lsp", "budget"]
+    }
+  ]
+}
