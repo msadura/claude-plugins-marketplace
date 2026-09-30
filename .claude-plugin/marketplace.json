@@ -10,6 +10,13 @@
       "source": "./plugins/setup-token-savings",
       "category": "developer-tools",
       "keywords": ["token-savings", "optimization", "rtk", "scrapling", "context7", "lsp", "budget"]
+    },
+    {
+      "name": "code-shape",
+      "description": "Paired skills to keep code changes cheap to read — code-shape (authoring rules) + code-shape-review (audits a diff against them, plus security and spec drift)",
+      "source": "./plugins/code-shape",
+      "category": "developer-tools",
+      "keywords": ["code-shape", "code-review", "code-quality", "cognitive-cost", "slop", "refactoring", "diff-review"]
     }
   ]
 }

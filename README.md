@@ -18,6 +18,15 @@ Interactive setup wizard for Claude Code token optimization. Installs and config
 
 Based on the [Claude Code Token Savings Guide](https://www.notion.so/Claude-Code-Token-Savings-Guide-Fit-a-50-mo-API-Budget-1d0e35e01f0b80b99643f0f3f56f5619).
 
+### code-shape
+
+Two paired skills for keeping code changes cheap to read — cognitive cost, not just line count:
+
+- **`code-shape`** — the authoring rules, applied while planning and writing code: narrow interfaces, choke points, no flag threading, no dead guards, comments that state constraints instead of explaining slop, and coherent rewrites over patch-on-patch.
+- **`code-shape-review`** — a read-only audit that checks a diff (branch, PR, or working tree) against those same rules, plus diff-scoped security gaps and spec drift. Built for AI-generated changes that pass tests and "look fine" but read as slop.
+
+Use `code-shape` when writing or planning a change; use `code-shape-review` before merging.
+
 ## Installation
 
 ### 1. Add this marketplace
@@ -30,6 +39,7 @@ Based on the [Claude Code Token Savings Guide](https://www.notion.so/Claude-Code
 
 ```
 /plugin install setup-token-savings
+/plugin install code-shape
 ```
 
 ### 3. Use it

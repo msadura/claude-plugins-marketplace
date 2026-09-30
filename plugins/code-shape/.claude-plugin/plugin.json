@@ -1,0 +1,21 @@
+{
+  "name": "code-shape",
+  "description": "Two paired skills for keeping code changes cheap to read: code-shape (authoring rules — narrow interfaces, choke points, no flag threading, no dead guards, comments that state constraints instead of explaining slop, coherent rewrites) and code-shape-review (audits a diff against those same rules plus diff-scoped security and spec drift).",
+  "version": "1.0.0",
+  "author": {
+    "name": "msadura"
+  },
+  "homepage": "https://github.com/msadura/claude-plugins-marketplace",
+  "repository": "https://github.com/msadura/claude-plugins-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "code-shape",
+    "code-review",
+    "code-quality",
+    "cognitive-cost",
+    "slop",
+    "refactoring",
+    "authoring-rules",
+    "diff-review"
+  ]
+}
