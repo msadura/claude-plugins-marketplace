@@ -76,3 +76,12 @@ Before you consider a change done, pass each rule over your own diff:
   constraint the code cannot express.**
 - Does the changed unit read as one coherent pass, or as patches on patches? →
   rewrite it whole.
+
+## Enforcing these rules in code review
+
+These rules ship as a repo-standards file (`CODING_STANDARDS.md`) alongside this
+skill. Drop that file at a repo's root and a review tool that discovers
+standards docs (e.g. `mattpocock-skills:code-review`) feeds it to its Standards
+axis — the review then checks the diff against each rule above by name. Use
+`code-shape-review` for a self-contained audit; use this path to enforce the
+same rules inside an existing two-axis (Standards + Spec) review.

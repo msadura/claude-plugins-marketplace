@@ -27,6 +27,17 @@ Two paired skills for keeping code changes cheap to read — cognitive cost, not
 
 Use `code-shape` when writing or planning a change; use `code-shape-review` before merging.
 
+**Enforce the rules inside a two-axis review (Standards + Spec):** the plugin ships `CODING_STANDARDS.md` (the code-shape rules as a repo-standards doc). Copy it to a repo's root and a review tool that discovers standards docs — e.g. [`mattpocock-skills:code-review`](https://github.com/mattpocock/skills) — feeds it to its Standards axis, so the review checks the diff against each rule by name alongside its Spec axis:
+
+```
+# copy the standards doc from the installed plugin into your repo root
+# (find it with:  find ~/.claude/plugins -name CODING_STANDARDS.md -path '*code-shape*')
+cp <that-path> ./CODING_STANDARDS.md
+git add CODING_STANDARDS.md && git commit -m "chore: add code-shape coding standards"
+# then, with mattpocock-skills installed:
+/code-review <base-branch>
+```
+
 ## Installation
 
 ### 1. Add this marketplace
