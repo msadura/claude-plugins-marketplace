@@ -35,17 +35,23 @@ If you cannot construct an input that reaches a branch, it should not exist.
 Prefer making illegal states unrepresentable (types, narrower parameters) over
 runtime checks. A guard that can never fire is a question a reader can't answer.
 
-### Comments state constraints, not explanations
-Code is read by humans **and** AI; write it so a capable reader needs no comment
-to understand what it does or why it is shaped this way. A comment written to
-make the code understandable is proof the code failed, not a fix — rewrite the
-code (names, decomposition, structure) until the comment is unnecessary. Do not
-add comments just because other code in the repo has them. A comment is
-legitimate ONLY for a constraint the code genuinely cannot express: an external
-protocol quirk, an upstream-bug workaround, a non-obvious domain invariant.
-Narration, changelog/"added later" notes, and "handle edge case" markers are
-violations. A long comment explaining a fragile coupling is a defect in the
-coupling — restructure so the constraint holds by construction.
+### Comments — the code carries the meaning, a comment never excuses it
+Write code a competent reader (human **and** AI) understands with NO comment. A
+comment that explains, documents, motivates or **justifies** what the code does
+or why it is written this way is a defect — rewrite the code (rename, split,
+restructure) until it reads on its own, then delete the comment. Three excuses
+are explicitly INVALID and a reviewer must reject them: (1) *"it states the WHY /
+the intent / an architectural constraint"* — justifying the shape of your code in
+prose is the slop this rule forbids; the shape must be obvious from the code.
+(2) *"a sibling/other file in the repo is commented like this"* — repo precedent
+is never a reason; copy good code, not other files' noise. (3) *"it documents the
+function/export for callers"* — the name and signature are the documentation; a
+JSDoc restating them is noise. **Proportion is the tell:** if a unit carries
+comment text comparable to or longer than its own code, the code is the defect
+and the comment is load-bearing narration — rewrite the unit. The only comment
+that survives states a constraint the code genuinely cannot encode and a reader
+cannot infer: an external protocol quirk, a documented upstream-bug workaround, a
+legal/compliance literal. "Why we chose this approach" is NOT such a constraint.
 
 ### Rewrite, don't patch
 Modifying existing code means rewriting the affected unit coherently. The result

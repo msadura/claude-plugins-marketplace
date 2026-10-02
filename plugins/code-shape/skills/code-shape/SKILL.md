@@ -43,18 +43,24 @@ narrower parameters) over runtime checks. Every guard a reader meets is a
 question ("when does this fire?"); a guard that can never fire is a question
 with no answer.
 
-**COMMENTS STATE CONSTRAINTS, NOT EXPLANATIONS** — code is read by humans *and*
-AI; write it so a capable reader needs no comment to understand what it does or
-why it is shaped this way. Reaching for an explanatory comment is a signal the
-code came out unclear — the fix is to rewrite the code (better names, smaller
-units, clearer structure) until the comment is unnecessary, not to annotate the
-slop. Do not write comments because you saw them elsewhere in the repo; write
-them only when the code genuinely cannot carry the meaning. A comment is
-legitimate ONLY for a constraint the code truly cannot express: an external
-protocol quirk, an upstream-bug workaround, a non-obvious domain invariant.
-Narration, changelog/"added later" notes, and "handle edge case" markers are
-noise — don't write them. A long comment explaining a fragile coupling is a
-defect in the coupling: restructure so the constraint holds by construction.
+**COMMENTS — THE CODE CARRIES THE MEANING, A COMMENT NEVER EXCUSES IT** — write
+code a competent reader (human *and* AI) understands with NO comment. A comment
+that explains, documents, motivates or **justifies** what the code does or why
+it is written this way is a DEFECT — rewrite the code (rename, split,
+restructure) until it reads on its own, then DELETE the comment. Three excuses
+are explicitly INVALID and must never keep a comment alive: (1) *"it states the
+WHY / the intent / an architectural constraint"* — justifying the shape of your
+code in prose IS the slop this rule forbids; the shape must be obvious from the
+code, not defended in a paragraph. (2) *"a sibling/other file in the repo is
+commented like this"* — repo precedent is never a reason; copy good code, not
+other files' noise. (3) *"it documents the function/export for callers"* — the
+name and signature ARE the documentation; a JSDoc restating them is noise.
+**Proportion is the tell:** if a unit carries comment text comparable to or
+longer than its own code, the CODE is the defect and the comment is load-bearing
+narration — rewrite the unit, do not annotate it. The ONLY comment that survives
+states a constraint the code genuinely cannot encode and a reader cannot infer:
+an external protocol quirk, a documented upstream-bug workaround, a
+legal/compliance literal. "Why we chose this approach" is NOT such a constraint.
 
 **REWRITE, DON'T PATCH** — modifying existing code means rewriting the affected
 unit coherently. The result must read as if written in one pass by one author,
@@ -71,9 +77,11 @@ Before you consider a change done, pass each rule over your own diff:
 - Did I add a parameter that changes a distant callee's behavior? → give the
   boundary its own operation instead.
 - Did I add a branch I can't produce an input for? → delete it.
-- **Did I write a comment to explain what my code does? → the code is unclear;
-  rewrite it so the comment isn't needed. Keep only comments that state a
-  constraint the code cannot express.**
+- **Did I write a comment that explains, documents or justifies the code? → the
+  code is the defect; rewrite it and delete the comment. "It's the why", "a
+  sibling file has one", and "it documents the export" do NOT save it. If the
+  comment is as long as the code, that's the proof — rewrite. Keep only a
+  constraint the code cannot encode and a reader cannot infer.**
 - Does the changed unit read as one coherent pass, or as patches on patches? →
   rewrite it whole.
 
