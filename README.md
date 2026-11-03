@@ -38,6 +38,16 @@ git add CODING_STANDARDS.md && git commit -m "chore: add code-shape coding stand
 /code-review <base-branch>
 ```
 
+### my-style
+
+Three skills for writing in one BLUF (bottom-line-up-front) voice:
+
+- **`my-style`** — Slack messages, PRDs, Jira tickets, specs, design notes, standup updates, emails, and cross-team replies, written or rewritten in that voice.
+- **`pr-create-my-style`** — a PR title plus a What / Why / Testing / Notes body drawn from the diff and ticket.
+- **`pr-review-my-style`** — runs code review, keeps only the findings worth posting, and posts them as one GitHub review with a verdict.
+
+Say "write this in my style", "open a PR for this branch", or "review PR 123 and comment for me" (or use the matching `/my-style`, `/pr-create-my-style`, `/pr-review-my-style` commands).
+
 ## Installation
 
 ### 1. Add this marketplace
@@ -51,6 +61,7 @@ git add CODING_STANDARDS.md && git commit -m "chore: add code-shape coding stand
 ```
 /plugin install setup-token-savings
 /plugin install code-shape
+/plugin install my-style
 ```
 
 ### 3. Use it

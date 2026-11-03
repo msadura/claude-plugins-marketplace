@@ -17,6 +17,13 @@
       "source": "./plugins/code-shape",
       "category": "developer-tools",
       "keywords": ["code-shape", "code-review", "code-quality", "cognitive-cost", "slop", "refactoring", "diff-review"]
+    },
+    {
+      "name": "my-style",
+      "description": "BLUF writing voice: my-style for Slack/PRD/Jira/specs, pr-create-my-style for PR descriptions, pr-review-my-style for posting review comments with a verdict",
+      "source": "./plugins/my-style",
+      "category": "productivity",
+      "keywords": ["writing", "bluf", "slack", "prd", "jira", "pull-request", "code-review", "voice", "style"]
     }
   ]
 }

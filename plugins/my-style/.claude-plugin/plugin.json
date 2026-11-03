@@ -1,0 +1,10 @@
+{
+  "name": "my-style",
+  "description": "Three skills for writing in one BLUF voice: my-style (Slack, PRDs, Jira, specs, cross-team replies), pr-create-my-style (PR title + What/Why/Testing/Notes body from the diff and ticket), pr-review-my-style (run code-review, keep only findings worth posting, post them as one GitHub review with a verdict).",
+  "version": "1.0.0",
+  "author": { "name": "msadura" },
+  "homepage": "https://github.com/msadura/claude-plugins-marketplace",
+  "repository": "https://github.com/msadura/claude-plugins-marketplace",
+  "license": "MIT",
+  "keywords": ["writing", "bluf", "slack", "prd", "jira", "pull-request", "code-review", "voice", "style"]
+}
